@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from 'react-redux';
 
 const ObedenitTable = ({obidinet}) => {
+
     return (
         <div className='mb-5'>
             <h1>Ajratilganlar: </h1>

@@ -21,8 +21,8 @@ export default (state=initialState, action) => {
         case REMOVE_TABLE:
             return {
                 ...state,
-                obidinet: state.obidinet.slice(0, state.obidinet.length),
-                korzinka: state.korzinka.slice(0, state.korzinka.length)
+                obidinet: [],
+                korzinka: []
             };
         default:
             return state

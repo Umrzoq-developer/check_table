@@ -1,12 +1,13 @@
 import React from "react";
 import {connect} from 'react-redux';
 
-const KorzinkaTable = ({korzinka}) => {
+const KorzinkaTable = ({korzinka, obidinet}) => {
+
     return (
         <div className='mt-5'>
             <h1>Korzinka: </h1>
             {
-                korzinka.length > 0 ?
+                (korzinka.lengt > 0 || obidinet.length>0) ?
                 <div className='table table-active'>
                     <thead>
                     <th>Id:</th>
@@ -14,6 +15,18 @@ const KorzinkaTable = ({korzinka}) => {
                     </thead>
                     <tbody>
                     {korzinka.map(item => {
+                        return (
+                            <tr key={item.id}>
+                                <td className='w-25'>
+                                    {item.id}
+                                </td>
+                                <td className='w-25'>
+                                    {item.name}
+                                </td>
+                            </tr>
+                        )
+                    })}
+                    {obidinet.map(item => {
                         return (
                             <tr key={item.id}>
                                 <td className='w-25'>
@@ -34,7 +47,8 @@ const KorzinkaTable = ({korzinka}) => {
 
 const mapStateToProps = (state) => {
     return {
-        korzinka: state.table.korzinka
+        korzinka: state.table.korzinka,
+        obidinet: state.table.obidinet
     }
 };
 
